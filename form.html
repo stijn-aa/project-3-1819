@@ -1,0 +1,144 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 mx-auto bg-light rounded p-4 shadow-sm">
+                    <div>
+                        <h3>Create a new log </h3>
+                    </div>
+                    <div class="form-group undefined"><label for="title">Add a title:</label>
+                        <div class="field"><input id="title" type="text" placeholder="Title" required=""
+                                class="form-control col-md-4"></div>
+                    </div>
+                    <div class="form-group undefined"><label for="subtype">Select a subtype:</label>
+                        <div class="field"><select id="subtype" name="subtype" required=""
+                                class="form-control col-md-4">
+                                <option value="run">run</option>
+                            </select></div>
+                    </div>
+                    <div hidden="" class="form-group undefined"><label for="run">Run number:</label>
+                        <div class="field"><input id="run" type="number" placeholder="Run number"
+                                class="form-control col-md-4"></div>
+                    </div>
+                    <div class="form-group undefined">
+                        <div class="field">
+                            <div class="card shadow-sm bg-light">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs card-header-tabs">
+                                            <li class="nav-item"><a href="javascript:void(0);"
+                                                    class="nav-link active">Editor</a></li>
+                                            <li class="nav-item"><a href="javascript:void(0);"
+                                                    class="nav-link false">Preview</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content false">
+                                            <div class="row">
+                                                <div class="col-md-12 jf-markdown-wrapper"><textarea id="markdown"
+                                                        placeholder="Type your description here"
+                                                        class="rounded"></textarea></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content d-none">
+                                            <div class="jf-markdown-wrapper">
+                                                <div id="MarkdownPreview" class="jf-markdown-viewer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div role="alert" id="maximum-size-label" for="save" hidden="" class="alert alert-danger">
+                            Maximum file size is 5MB! Please select a
+                            smaller file.</div><label for="fileUpload">Attach file to
+                            Log:</label><input id="fileUpload" name="fileUpload" type="file" data-show-caption="true"
+                            class="form-control-file undefined"><img id="preview-image" src="" hidden=""
+                            style="max-width: 40%; padding: 10px 10px 10px 0px;">
+                        <div hidden=""><span tabindex="0" data-toggle="tooltip" data-placement="right"
+                                title="Select a file before saving." class="d-inline-block"><button id="save"
+                                    data-dismiss="modal" disabled="" class="btn btn-primary">Save File</button></span>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-6"><button type="submit"
+                                class="btn btn-primary undefined undefined">Submit</button></div>
+                        <div class="col-md-6">
+                            <div><button type="button" data-toggle="modal" data-target="#MarkdownHelpText"
+                                    class="btn btn-info mb- float-right">Markdown help</button>
+                                <div tabindex="-1" role="dialog" id="MarkdownHelpText" class="modal mt-5">
+                                    <div role="document" class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Markdown help</h5><button type="button"
+                                                    data-dismiss="modal" aria-label="Close" class="close"><span
+                                                        aria-hidden="true">×</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="jf-markdown-wrapper">
+                                                    <div id="MarkdownHelpTextViewer" class="jf-markdown-viewer">
+                                                        <p>Jiskefet uses markdown for text
+                                                            formatting and editing.
+                                                            These are the basic techniques.
+                                                            For a more detailed explanation
+                                                            <a
+                                                                href="https://guides.github.com/features/mastering-markdown/">go
+                                                                here</a>.</p>
+                                                        <h3 id="first-level-header">First Level
+                                                            Header</h3>
+                                                        <pre><code>Making Scrambled Eggs: A Primer
+===============================</code></pre>
+                                                        <h3 id="second-level-header">Second Level
+                                                            Header</h3>
+                                                        <pre><code>1.1: Preparation
+----------------</code></pre>
+                                                        <h3 id="paragraphs">Paragraphs</h3>
+                                                        <pre><code>Add two new lines to start a new paragraph. Crack two eggs into the bowl and whisk.</code></pre>
+                                                        <h3 id="bold">Bold</h3>
+                                                        <pre><code>**Carefully** crack the eggs.</code></pre>
+                                                        <h3 id="emphasis">Emphasis</h3>
+                                                        <pre><code>Whisk the eggs *vigorously*.</code></pre>
+                                                        <h3 id="lists">Lists</h3>
+                                                        <pre><code>Ingredients:
+- Eggs
+- Oil
+- *Optional:* milk</code></pre>
+                                                        <h3 id="links">Links</h3>
+                                                        <pre><code>To download a PDF version of the recipe, [click here](https://example.com/scrambled-eggs.pdf).</code></pre>
+                                                        <h3 id="images">Images</h3>
+                                                        <pre><code>![The Finished Dish](https://via.placeholder.com/150)</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+
+</body>
+
+</html>
