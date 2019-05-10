@@ -1,12 +1,248 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="my.css">
     <title>Document</title>
 </head>
+
 <body>
-    test
-        <script src="overview.js"></script>
-    </body>
+    <div>
+        <nav class="navbar navbar-expand-sm navbar-dark jf-navbar">
+            <div class="navbar-header w-100 d-flex"><button type="button" class="btn jf-hamburger-button"><svg
+                        class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="bars"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg><!-- <span class="fas fa-bars"></span> --></button><a href="/" class="navbar-brand"><img
+                        src="../../assets/alice_logo_text_white.png" width="30" height="30" alt=""
+                        class="d-inline-block align-top jf-logo">Jiskefet</a>
+                <ul class="jf-align-right mr-2">
+                    <div>
+                        <div class="jf-profile-nav-item">
+                            <div class="btn-group">
+                                <div class="dropdown-toggle mt-2" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"><img
+                                        src="https://avatars1.githubusercontent.com/u/47317521?v=4" alt="@null"
+                                        height="25" width="25" class="rounded"><span><svg
+                                            class="svg-inline--fa fa-caret-down fa-w-10 jf-caret-down ml-2"
+                                            aria-hidden="true" data-prefix="fas" data-icon="caret-down" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+                                            <path fill="currentColor"
+                                                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                            </path>
+                                        </svg><!-- <i class="fas fa-caret-down jf-caret-down ml-2"></i> --></span></div>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div href="/user/57" class="dropdown-item jf-dropdown-name">Signed in as <br>
+                                        <b>stijn-aa</b></div>
+                                    <div class="dropdown-divider"></div><button href="/user/57" type="button"
+                                        class="dropdown-item jf-dropdown-item">Your profile</button>
+                                    <div class="dropdown-divider"></div><button href="/tokens" type="button"
+                                        class="dropdown-item jf-dropdown-item">Tokens</button>
+                                    <div class="dropdown-divider"></div><a href="http://cmd.jiskefet.io/api/doc/"
+                                        target="_blank"><button type="button" class="dropdown-item jf-dropdown-item">API
+                                            docs</button></a>
+                                    <div class="dropdown-divider"></div><button type="button"
+                                        class="dropdown-item jf-dropdown-item">Sign out</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="jf-wrapper">
+            <nav class="jf-sidebar ">
+                <ul class="list-unstyled components">
+                    <li class="nav-item false"><a href="/logs" class="nav-link">Logs</a></li>
+                    <li class="nav-item false"><a href="/runs" class="nav-link">Runs</a></li>
+                    <li class="nav-item false"><a href="/logs/create" class="nav-link">Create new log</a></li>
+                    <li class="nav-item false"><a href="/subsystems" class="nav-link">Subsystems Overview</a></li>
+                </ul>
+                <div class="jf-footer">Jiskefet v0.1.0</div>
+            </nav>
+            <div class="jf-content ">
+                <div class="container-fluid">
+                    <div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-md-3 collapse-transition">
+                                    <div class="bg-light rounded 
+                        p-2 border undefined">
+                                        <div>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="filters" aria-expanded="true"
+                                                            data-fa-transform="grow-10" class="jf-collapse-toggle"><svg
+                                                                class="svg-inline--fa fa-filter fa-w-16"
+                                                                aria-hidden="true" data-prefix="fas" data-icon="filter"
+                                                                role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512" data-fa-i2svg="">
+                                                                <path fill="currentColor"
+                                                                    d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z">
+                                                                </path>
+                                                            </svg>
+                                                            <!-- <span class="fas fa-filter"></span> -->&nbsp;Filters
+                                                        </div>
+                                                        <div id="filters" class="">
+                                                            <div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div id="logId" aria-expanded="true"
+                                                                            data-fa-transform="grow-10"
+                                                                            class="jf-collapse-toggle"><svg
+                                                                                class="svg-inline--fa fa-angle-down fa-w-10 mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"
+                                                                                aria-hidden="true" data-prefix="fas"
+                                                                                data-icon="angle-down" role="img"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 320 512" data-fa-i2svg="">
+                                                                                <path fill="currentColor"
+                                                                                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                                                                                </path>
+                                                                            </svg>
+                                                                            <!-- <i class="fas fa-angle-down mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"></i> -->&nbsp;Log
+                                                                            id</div>
+                                                                        <div id="logId" class="">
+                                                                            <div class="form-group mt-2"><input
+                                                                                    type="number" id="logId"
+                                                                                    placeholder="e.g. 1"
+                                                                                    class="form-control form-control-sm">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div id="searchterm" aria-expanded="true"
+                                                                            data-fa-transform="grow-10"
+                                                                            class="jf-collapse-toggle"><svg
+                                                                                class="svg-inline--fa fa-angle-down fa-w-10 mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"
+                                                                                aria-hidden="true" data-prefix="fas"
+                                                                                data-icon="angle-down" role="img"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 320 512" data-fa-i2svg="">
+                                                                                <path fill="currentColor"
+                                                                                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                                                                                </path>
+                                                                            </svg>
+                                                                            <!-- <i class="fas fa-angle-down mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"></i> -->&nbsp;Title
+                                                                        </div>
+                                                                        <div id="searchterm" class="">
+                                                                            <div class="form-group mt-2"><input
+                                                                                    type="text" id="searchterm"
+                                                                                    placeholder="e.g. EOR report"
+                                                                                    class="form-control form-control-sm">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div id="startCreationTime" aria-expanded="true"
+                                                                            data-fa-transform="grow-10"
+                                                                            class="jf-collapse-toggle"><svg
+                                                                                class="svg-inline--fa fa-angle-down fa-w-10 mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"
+                                                                                aria-hidden="true" data-prefix="fas"
+                                                                                data-icon="angle-down" role="img"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 320 512" data-fa-i2svg="">
+                                                                                <path fill="currentColor"
+                                                                                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                                                                                </path>
+                                                                            </svg>
+                                                                            <!-- <i class="fas fa-angle-down mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"></i> -->&nbsp;startCreationTime
+                                                                        </div>
+                                                                        <div id="startCreationTime" class="">
+                                                                            <div class="form-group mt-2"><input
+                                                                                    type="datetime-local"
+                                                                                    id="startCreationTime"
+                                                                                    class="form-control form-control-sm">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div id="endCreationTime" aria-expanded="true"
+                                                                            data-fa-transform="grow-10"
+                                                                            class="jf-collapse-toggle"><svg
+                                                                                class="svg-inline--fa fa-angle-down fa-w-10 mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"
+                                                                                aria-hidden="true" data-prefix="fas"
+                                                                                data-icon="angle-down" role="img"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                viewBox="0 0 320 512" data-fa-i2svg="">
+                                                                                <path fill="currentColor"
+                                                                                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+                                                                                </path>
+                                                                            </svg>
+                                                                            <!-- <i class="fas fa-angle-down mt-2 jf-rotate-if-collapsed jf-rotate-if-not-collapsed"></i> -->&nbsp;endCreationTime
+                                                                        </div>
+                                                                        <div id="endCreationTime" class="">
+                                                                            <div class="form-group mt-2"><input
+                                                                                    type="datetime-local"
+                                                                                    id="endCreationTime"
+                                                                                    class="form-control form-control-sm">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 mb-5 collapse-transition">
+                                    <div class="row mb-2 ">
+                                        <div class="col-md-10"></div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                    <div>
+                                        <div id="logtable" class="table-responsive table-grid">
+                                            <div class="log ">
+                                                <h3 class="titel">Titel</h3>
+                                                <h3 class="msg">Infomation</h3>
+                                                <h3 class="tag-team">
+                                                    Tags
+                                                </h3>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="overview.js"></script>
+</body>
+
 </html>

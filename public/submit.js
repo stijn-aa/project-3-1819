@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io('/submit');
 
 
 function TagOnEnter(element) {
@@ -17,12 +17,23 @@ function sugTagOnSpace(element) {
     }
 }
 
-function Submit(){
-  const tags = document.querySelectorAll(".tag.added")
-  const titel = document.querySelector("#titel").value
-  const msg = document.querySelector("#markdown").value
-  
-  socket.emit('uploadLog', titel, msg, tags)
+document.querySelector('#submit').addEventListener("click", Submit)
+
+function Submit() {
+
+    const tags = document.querySelectorAll(".tag.added")
+
+    const titel = document.querySelector("#title").value
+
+    const msg = document.querySelector("#markdown").value
+
+    const tagArray = []
+
+    tags.forEach(element => {
+        tagArray.push(element.firstChild.innerText)
+    })
+
+    socket.emit('uploadLog', titel, msg, tagArray)
 
 }
 
@@ -152,5 +163,34 @@ const tagList = {
         "kofferbak",
         "knipperlicht"
     ],
+    maintenance: [
+        "uncabling",
+        "recalibrating",
+        "reset",
+
+    ],
+    uncabling: [
+        'fiber',
+        'optical',
+        'trigger-fiber',
+        'ethernet',
+        'DCS'
+    ],
+    careful: [
+        "danger",
+    ],
+    sectors:[
+        "SM11","SM12","SM13","AM9","AM10","PM13","PM18"
+    ],
+
+    SM11: [
+        "C-side",
+        "A-side",
+        "B-side",
+
+    ],
     
+
+
+
 };

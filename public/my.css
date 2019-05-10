@@ -14,6 +14,33 @@
     width: 100%;
     height: 100%;
 }
+.tag-team{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.table-grid{
+    display: flex;
+    flex-direction: column;
+}
+
+span.overviewTag {
+    padding: 0px 6px 0px 0px;
+    font-size: 8px;
+}
+
+.log{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.table-grid div{
+    border: 1px solid #eee;
+}
 
 .tag-area {
     width: 425px;

@@ -1,34 +1,30 @@
 # Project 3 @cmda-minor-web · 2018-2019
 
-## Design for Real-Time
-Het project vindt plaats bij in ons eigen lokaal. Maandagochtend is om 9.30 uur de kickoff (bij de oprachtgever), vrijdag zijn de presentaties van de resultaten (bij de opdrachtgever). In een week bouwt iedere student een eigen prototype ter onderbouwing van aanbevelingen aan de opdrachtgevers (CERN & Lifely). De aanbevelingen betreffen het designen voor Real-Time web applicaties. Technieken geleerd bij [Web Design](https://github.com/cmda-minor-web/web-design-1819) en [Real-Time Web](https://github.com/cmda-minor-web/real-time-web-1819) worden toegepast bij het bouwen van de de prototypes en et schrijven van de aanbevelingen.
+### CASE
 
-## Programma
-Maandag - 9.30 - kickoff
-Woensdag - voortgangbespreking
-Vrijdag presentatie
+ALS Gebruiker WIL IK een simpele maar gebruiksvriendelijke manier om tags te maken en aan te passen
+ZODAT Logs of threads gemakkelijker getagt kunnen worden en daarmee makkelijker te doorzoeken / filteren.
 
-## Werkwijze en Criteria
-### Werkwijze
-Full-time week werken aan prototypes / proof of concepts over designen voor real-time web applicaties. Vrijdag is de pitch! Student laat zien dat hij/zij de vakken [Web Design](https://github.com/cmda-minor-web/web-design-1819) en [Real-Time Web](https://github.com/cmda-minor-web/real-time-web-1819) begrijpt en beheerst.
+### User-senatrio
+De onderzoekers bij cern voeren roetinge werk uit. Dit zijn lange dagen met werk dat geconcentreerd en precies uitgevoerd moet worden. Het kan gaan om een dag maar ook een nacht shift. Mijn uitgangspunt is om de cognitive lading van de handelingen om een tag toe te voegen zo laag mogelijk te houden zodat alle energie en focus naar het raporteren en loggen kan. Als onderzoeker wil je zonder al te veel moeite de juiste tags vinden en kunt toevoegen. Dingen die gewenst zijn zijn onderanderen: intuïtief gebruik, zo min mogelijk dubbele woorden typen, snelheid in tags toevoegen, tags makkelijk kunnen verwijderen, 
 
-Iedere dag zijn er coaches aanwezig voor coaching en feedback. We sluiten de dag af met een stand up, om de status door te spreken. Waar ben je mee bezig? Loop je ergens vast of heb je hulp nodig? Waar sta je?
+### Research
+Tags en hastags zijn oude systemen waarbij de hastag vooral sinds 2006 met de opkomst van twitter een wijdere adoptie ondering. Sites waarvan ik de ux op een fijne manier vind werken zijn slack, youtube en twitter.
 
-### Beoordeling
-Tijdens de beoordeling krijg je feedback op het resultaat en op je functioneren. De vakdocenten beoordelen In hoeverre je in het project laten zien dat je de bijhorende vakken beheerst en goed hebt toegepast. De opdrachtgver is geïnteresseerd in hoeverre je oplossing voldoet aan de eisen die zijzelf stellen aan hun producten. Misschien laat je wel wat zien waar ze zelf nog niet aan gedacht hebben?
+Op twitter geef je zelf in je "log" je tag aan met een #. Hier dient de tag als context voor het bericht. Door het in de tekst editor te bouwen kun je makkelijk door typen en je bericht met alle tags uploaden naar de site. Je formulier bestaat uit één tekst veld. De weg van gedachte tot post is hierdoor extreem snel.
 
-Het project telt als AVV mee met de Meesterproef.
+Op youtube kun je tags toevoegen aan de videos die je upload. Hier kun je in een apart text veld, onder de omschrijving, typen om tags toe te voegen. Het gaat hierbij niet om context van de omschrijving maar om duiding en catogorizering van de video. De tags in het dit systeem moeten dit ook doen voor de log. 
 
-### Feedback over functioneren
-Je hebt een leergierig, gedreven en zelfredzame houding nodig om de minor te kunnen halen. Welke vaardigheden heb je laten zien? Onderzoekend vermogen? Creativiteit? Conceptueel? In hoeverre komen je houding en verworven vaardigheden overeen met wat een frontender in de praktijk nodig heeft?
 
-### Web Design
-Het vak [Web Design](https://github.com/cmda-minor-web/web-design-1819) gaat over het ontwerpen en testen van Interactie. Het voordeel van een Frontend Developer (of Web Designer) is dat die techniek begrijpt, kan toepassen én verstand heeft van UX en design. Als je Web technieken begrijpt kun je je ideeën snel prototypen en testen met echte gebruikers, in een browser. Je kan dan aanpassingen doorvoeren, uitproberen en weer testen
+### Concept
+Mijn uitgangspunt is om de cognitive lading van de handelingen om een tag toe te voegen zo laag mogelijk te houden zodat alle energie en focus naar het raporteren en loggen kan. De youtube aanpak geeft een goed onderschijt tussen bericht en duiding.
 
-### Real-Time Web
-Het vak [Real-Time Web](https://github.com/cmda-minor-web/real-time-web-1819) gaat over het bouwen van een betekenisvolle real-time applicatie. Hierin leer je hoe je een open verbinding (web socket) opzet tussen de client en de server. En hoe je in real-time data biede kanten op kunt versturen.
+Mijn concept bestaat uit een systeem met 2 lagen. De eerste laag zijn tags die je toevoegd op basis van de geschreven log en handmatig toegevoegde tags. De tags uit de geschreven log zijn sugesties zijn op basis van wat anderen onderzoekers handmatig aan tags hebben toe gevoegd. 
 
-### Oplevering & criteria
-- Presentatie met je bevindingen bij de opdrachtgever. 
-- Github met je code en readme.
+De 2de laag zijn tags die verwant zijn aan de toegevoegde tags. Deze krijg je te zien als je op een tag klikt.
 
+qua ux kun je heb ik het patroon van youtube overgenomen en ben daar op door gaan. Je kunt al typend tags toevoegen en je kunt klikken op de tags voor verwante tags.
+
+### Nice to haves
+- Als een tag al is toegevoegd niet meer als sugestie geven.
+- tag Sugesties op basis van andere logs

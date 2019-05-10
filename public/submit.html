@@ -80,7 +80,7 @@
 
               <div class="row form-group">
                 <div class="padding-15 large-field"><textarea id="markdown" placeholder="Type your description here"
-                    class="rounded h50" onkeydown="sugTagOnSpace(this)"> while reconnecting work</textarea></div>
+                    class="rounded h50" onkeydown="sugTagOnSpace(this)"> uncabling in C-side for SM11 was performed: optical fiber, trigger fiber ethernet and DCS (communication lines and power). optical fibers - numbering is different from normal configuration. in L1S0 -> should be careful while re-connecting work.</textarea></div>
               </div>
 
 
@@ -89,13 +89,13 @@
                 
 
 
-                <input class="add-tag" spellcheck="false" autocomplete="false" maxlength="10" onkeydown="TagOnEnter(this)">
+                <input class="add-tag" spellcheck="false" autocomplete="false" maxlength="13" onkeydown="TagOnEnter(this)">
               </div>
             
           </div>
 
           </form>
-          <div class="col-md-6"><button type="submit" class="btn btn-primary undefined undefined" onkeydown="Submit(this)">Submit</button></div>
+          <div class="col-md-6"><button type="submit" id="submit" class="btn btn-primary undefined undefined" >Submit</button></div>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
   </div>
 
 
-
+  <script src="/socket.io/socket.io.js"></script>
   <script src="submit.js"></script>
 </body>
 

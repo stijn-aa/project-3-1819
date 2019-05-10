@@ -5,7 +5,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-const ovr = io.of('/');
+const ovr = io.of('/overview');
 const sbt = io.of('/submit')
 
 
@@ -14,11 +14,11 @@ const sbt = io.of('/submit')
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/overview.html');
+app.get('/overview', function (req, res) {
+    res.sendFile(__dirname + '/public/overview.html');
 });
 app.get('/submit', function (req, res) {
-    res.sendFile(__dirname + '/submit.html');
+    res.sendFile(__dirname + '/public/submit.html');
 });
 
 
@@ -34,7 +34,8 @@ sbt.on('connect', function (socket) {
     console.log(socket.id, "has joind: Submit")
 
     socket.on('uploadLog', function (titel, msg, tags) {
-        io.to('overview').emit('buildLog', titel, msg, tags)
+        console.log(titel, msg, tags)
+        ovr.to('overview').emit('buildLog', titel, msg, tags)
     })
 
 })

@@ -1,0 +1,19 @@
+{
+  "name": "socket-chat-example",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "deploy": "git add . && git commit -am \"make it better\" && git push heroku master && heroku logs --tail"
+  },
+  "dependencies": {
+    "actions-on-google": "^2.6.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.19.0",
+    "socket.io": "^2.2.0"
+  }
+}
